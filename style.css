@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+body {
+  background-color: rgb(224, 224, 166);
+  background-image: linear-gradient(
+    to bottom,
+    rgb(188, 241, 195) 0%,
+    rgb(186, 235, 208) 50%,
+    rgb(4, 63, 17) 50%,
+    rgb(7, 56, 5) 100%
+  );
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+nav {
+  background-color: white;
+  padding: 20px;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 3px 6px 6px rgba(179, 245, 240, 0.541);
+  transition: width 0.6s linear;
+}
+nav.active {
+  width: 350px;
+}
+nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  width: 0;
+  transition: width 0.6s linear;
+}
+nav.active ul {
+  width: 100%;
+}
+nav ul li {
+  transform: rotateY("0deg");
+  opacity: 0;
+  transition: transform 0.6s linear, opacity 0.6s linear;
+}
+nav.active ul li {
+  opacity: 1;
+  transform: rotateY("360deg");
+}
+nav ul a {
+  position: relative;
+  color: rgb(4, 95, 27);
+  text-decoration: none;
+  text-shadow: 0 1px 1px rgb(6, 231, 119);
+}
+nav ul a:hover {
+  color: rgba(16, 163, 58, 0.562);
+  text-shadow: none;
+}
+.icon {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+.icon:focus {
+  outline: 0;
+}
+
+.line {
+  background-color: rgb(18, 138, 48);
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+.line2 {
+  top: auto;
+  bottom: 10px;
+}
+nav.active .icon .line1 {
+  transform: rotate(-765deg) translateY(5.5px);
+}
+nav.active .icon .line2 {
+  transform: rotate(765deg) translateY(-5.5px);
+}
